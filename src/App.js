@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Routes, Route} from "react-router-dom";
 
 // import configuration with API key
 import apiKey from "./config";
@@ -52,15 +53,28 @@ const App = () => {
   },[images.length, topic]);
   
   return (
-    <div>
+    <div className="container">
       <Header changeTopic={changeTopic} url={url} />
-      {
-        isLoading ? 
-        <p>Loading...</p> : 
-        <Gallery images={images} topic={topic} title={title} setTitle={setTitle} />
-      }
+      
+          {
+            isLoading ? 
+            <p>Loading...</p> : 
+            <Gallery images={images} topic={topic} title={title} setTitle={setTitle} />
+          }
+      
+      
+      
 
     </div>
+    // <div className="container">
+    //   
+    //   {
+    //     isLoading ? 
+    //     <p>Loading...</p> : 
+    //     <Gallery images={images} topic={topic} title={title} setTitle={setTitle} />
+    //   }
+
+    // </div>
   );
 };
 
